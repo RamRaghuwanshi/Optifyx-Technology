@@ -16,9 +16,9 @@ def update_characterlist():
 
 def generate_password():
     characterlist = update_characterlist()
-    length = lengthval.get()  # Get the password length from entry
+    length = lengthval.get() 
     password = []
-    if characterlist:  # Ensure there's a character to choose from
+    if characterlist:
         for i in range(length):
             password.append(random.choice(characterlist))
         result_label.config(text="Generated Password: " + "".join(password))
@@ -29,8 +29,7 @@ root = Tk()
 root.title("Random Password Generator")
 root.geometry("455x455")
 
-# Create and set variables for password options
-lengthval = IntVar()  # Use IntVar for the length of the password
+lengthval = IntVar() 
 Capitalval = BooleanVar()
 Smallval = BooleanVar()
 Numberval = BooleanVar()
@@ -52,7 +51,6 @@ Symbol.grid(row=5, column=1)
 
 Button(root, text="Generate Password", command=generate_password).grid(row=6, column=2)
 
-# Label to show the generated password
 result_label = Label(root, text="", font="comicsansns 10", justify=LEFT)
 result_label.grid(row=7, column=0, columnspan=3, padx=10, pady=20, sticky=W)
 
